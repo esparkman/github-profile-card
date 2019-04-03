@@ -4,24 +4,24 @@
     <div class="ui cards">
       <GithubUserProfile
         v-for="(username, index) in usernames"
-        :username="username"
         :key="index"
+        :username="username"
       />
     </div>
   </div>
 </template>
 
 <script>
-import GithubUserProfile from "@/components/GithubUserProfile";
+import GithubUserProfile from '@/components/GithubUserProfile'
 export default {
-  name: "App",
+  name: 'App',
   components: {
     GithubUserProfile
   },
   data() {
     return {
-      usernames: ["esparkman", "gareys", "wmavis"]
-    };
+      usernames: ['esparkman', 'gareys', 'wmavis']
+    }
   }
-};
+}
 </script>

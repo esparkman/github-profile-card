@@ -5,12 +5,12 @@
     </div>
     <div class="content">
       <a :href="`https://github.com/${username}`" class="header">{{
-        user.name || "Name Less"
+        user.name || 'Name Less'
       }}</a>
       <div class="meta">
-        <span class="date"
-          >Joined Github in {{ user.created_at | joinYear }}</span
-        >
+        <span class="date">
+          Joined Github in {{ user.created_at | joinYear }}
+        </span>
       </div>
       <div class="description">{{ user.bio }}</div>
     </div>
@@ -24,13 +24,13 @@
 </template>
 
 <script>
-import axios from "axios";
-import moment from "moment";
+import axios from 'axios'
+import moment from 'moment'
 export default {
-  name: "GithubUserProfile",
+  name: 'GithubUserProfile',
   filters: {
     joinYear(date) {
-      return moment(date).format("YYYY");
+      return moment(date).format('YYYY')
     }
   },
   props: {
@@ -42,14 +42,14 @@ export default {
   data() {
     return {
       user: {}
-    };
+    }
   },
   created() {
     axios
       .get(`https://api.github.com/users/${this.username}`)
       .then(response => {
-        this.user = response.data;
-      });
+        this.user = response.data
+      })
   }
-};
+}
 </script>
