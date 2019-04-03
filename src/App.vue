@@ -1,8 +1,12 @@
 <template>
   <div id="app" class="ui container">
-    <h1>Listeneers of 2019</h1>
+    <h1>My Github Friends</h1>
     <div class="ui cards">
-      <GithubUserProfile v-for="(username, index) in usernames" :username="username" :key="index"/>
+      <GithubUserProfile
+        v-for="(username, index) in usernames"
+        :username="username"
+        :key="index"
+      />
     </div>
   </div>
 </template>
@@ -16,18 +20,7 @@ export default {
   },
   data() {
     return {
-      usernames: [
-        "ssickles",
-        "esparkman",
-        "ealdent",
-        "iangawronski",
-        "wmavis",
-        "huntermeyer",
-        "david-frederick",
-        "claycribbs",
-        "dborchert",
-        "jmscholen"
-      ]
+      usernames: ["esparkman", "gareys", "wmavis"]
     };
   }
 };
